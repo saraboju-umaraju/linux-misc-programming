@@ -1,0 +1,36 @@
+/*INPUT(hello.o)
+OUTPUT(hello)
+OUTPUT_FORMAT("elf64-x86-64")
+
+
+SECTIONS 
+
+{
+	. = 0x200000
+	.text : {
+		hello.o(.text)
+	}
+	. = 0x400000
+	.data : {
+		hello.o(.data)
+	}
+
+}
+*/
+
+OUTPUT(hello) 
+OUTPUT_FORMAT("elf64-x86-64")
+INPUT(hello.o)
+
+SECTIONS
+{
+    . = 0x200000;
+    .text : {
+          *(.text)
+    }
+
+    . = 0x400000;
+    .data : {
+          *(.data)
+    }
+}

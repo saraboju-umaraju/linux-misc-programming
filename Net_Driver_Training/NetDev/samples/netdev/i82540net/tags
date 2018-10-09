@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DEVICE_ID	i82540net.c	25;"	d	file:
+DRV_NAME	i82540net.c	20;"	d	file:
+IOADDR	i82540net.c	32;"	d	file:
+IOBase	i82540net.c	/^unsigned long IOBase, IOBaseEnd;$/;"	v
+IOBaseEnd	i82540net.c	/^unsigned long IOBase, IOBaseEnd;$/;"	v
+IODATA	i82540net.c	33;"	d	file:
+RAH	i82540net.c	29;"	d	file:
+RAL	i82540net.c	28;"	d	file:
+ReadMACAddrIORegisters	i82540net.c	/^void ReadMACAddrIORegisters(void)$/;"	f
+ReadMACAddrMemRegisters	i82540net.c	/^void ReadMACAddrMemRegisters(void)$/;"	f
+VENDOR_ID	i82540net.c	24;"	d	file:
+dev	i82540net.c	/^struct net_device *dev;$/;"	v	typeref:struct:net_device
+dev_addr	i82540net.c	/^unsigned char dev_addr[8];$/;"	v
+get_card_details	i82540net.c	/^int get_card_details(struct pci_dev *pdev)$/;"	f
+get_mac	i82540net.c	/^void get_mac ( unsigned int addr )$/;"	f
+pcnet32_close	i82540net.c	/^int pcnet32_close(struct net_device *dev)$/;"	f
+pcnet32_get_stats	i82540net.c	/^static struct net_device_stats *pcnet32_get_stats(struct net_device *dev)$/;"	f	file:
+pcnet32_ioctl	i82540net.c	/^int pcnet32_ioctl(struct net_device *dev, struct ifreq *rq, int cmd)$/;"	f
+pcnet32_netdev_ops	i82540net.c	/^static const struct net_device_ops pcnet32_netdev_ops = {$/;"	v	typeref:struct:net_device_ops	file:
+pcnet32_open	i82540net.c	/^int pcnet32_open(struct net_device *dev)$/;"	f
+pcnet32_probe1	i82540net.c	/^int pcnet32_probe1(struct pci_dev *pdev)$/;"	f
+pcnet32_start_xmit	i82540net.c	/^int pcnet32_start_xmit(struct sk_buff *skb, struct net_device *dev)$/;"	f
+pcnet_driver	i82540net.c	/^struct pci_driver pcnet_driver = {$/;"	v	typeref:struct:pci_driver
+pcnet_exit	i82540net.c	/^module_exit(pcnet_exit);$/;"	v
+pcnet_exit	i82540net.c	/^void pcnet_exit(void)$/;"	f
+pcnet_init	i82540net.c	/^int pcnet_init(void)$/;"	f
+pcnet_init	i82540net.c	/^module_init(pcnet_init);$/;"	v
+pcnet_pci_tbl	i82540net.c	/^static struct pci_device_id pcnet_pci_tbl[] = {$/;"	v	typeref:struct:pci_device_id	file:
+pcnet_probe	i82540net.c	/^int pcnet_probe(struct pci_dev *pdev, const struct pci_device_id *ent)$/;"	f
+pcnet_remove	i82540net.c	/^void pcnet_remove(struct pci_dev *pdev)$/;"	f
+stats	i82540net.c	/^struct net_device_stats stats = {0};$/;"	v	typeref:struct:net_device_stats
+ulMemoryBase	i82540net.c	/^unsigned long ulMemoryBase, ulMemoryBaseEnd;$/;"	v
+ulMemoryBaseEnd	i82540net.c	/^unsigned long ulMemoryBase, ulMemoryBaseEnd;$/;"	v
+ulResFlags	i82540net.c	/^unsigned long ulResFlags;$/;"	v

@@ -1,0 +1,71 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARRAY_SIZE	partition.c	5;"	d	file:
+BR_SIGNATURE	partition.c	20;"	d	file:
+BR_SIGNATURE_OFFSET	partition.c	18;"	d	file:
+BR_SIGNATURE_SIZE	partition.c	19;"	d	file:
+BR_SIZE	partition.c	17;"	d	file:
+MBR_DISK_SIGNATURE_OFFSET	partition.c	9;"	d	file:
+MBR_DISK_SIGNATURE_SIZE	partition.c	10;"	d	file:
+MBR_SIGNATURE	partition.c	16;"	d	file:
+MBR_SIGNATURE_OFFSET	partition.c	14;"	d	file:
+MBR_SIGNATURE_SIZE	partition.c	15;"	d	file:
+MBR_SIZE	partition.c	8;"	d	file:
+PARTITION_ENTRY_SIZE	partition.c	12;"	d	file:
+PARTITION_H	partition.h	2;"	d
+PARTITION_TABLE_OFFSET	partition.c	11;"	d	file:
+PARTITION_TABLE_SIZE	partition.c	13;"	d	file:
+PartEntry	partition.c	/^} PartEntry;$/;"	t	typeref:struct:__anon1	file:
+PartTable	partition.c	/^typedef PartEntry PartTable[4];$/;"	t	file:
+RAMDEVICE_H	ram_device.h	2;"	d
+RB_DEVICE_SIZE	ram_device.c	8;"	d	file:
+RB_FIRST_MINOR	ram_block.c	12;"	d	file:
+RB_MINOR_CNT	ram_block.c	13;"	d	file:
+RB_SECTOR_SIZE	ram_device.h	4;"	d
+SECTOR_SIZE	partition.c	7;"	d	file:
+abs_start_sec	partition.c	/^    unsigned int abs_start_sec;$/;"	m	struct:__anon1	file:
+boot_type	partition.c	/^    unsigned char boot_type; \/\/ 0x00 - Inactive; 0x80 - Active (Bootable)$/;"	m	struct:__anon1	file:
+copy_br	partition.c	/^static void copy_br(u8 *disk, int start_cylinder, const PartTable *part_table)$/;"	f	file:
+copy_mbr	partition.c	/^static void copy_mbr(u8 *disk)$/;"	f	file:
+copy_mbr_n_br	partition.c	/^void copy_mbr_n_br(u8 *disk)$/;"	f
+def_log_part_br_cyl	partition.c	/^static unsigned int def_log_part_br_cyl[] = {0x0A, 0x0E, 0x12};$/;"	v	file:
+def_log_part_table	partition.c	/^static const PartTable def_log_part_table[] =$/;"	v	file:
+def_part_table	partition.c	/^static PartTable def_part_table =$/;"	v	file:
+dev_data	ram_device.c	/^static u8 *dev_data;$/;"	v	file:
+dor-y	Makefile	/^    dor-y := ram_block.o ram_device.o partition.o$/;"	m
+end_cyl	partition.c	/^    unsigned char end_cyl;$/;"	m	struct:__anon1	file:
+end_cyl_hi	partition.c	/^    unsigned char end_cyl_hi:2;$/;"	m	struct:__anon1	file:
+end_head	partition.c	/^    unsigned char end_head;$/;"	m	struct:__anon1	file:
+end_sec	partition.c	/^    unsigned char end_sec:6;$/;"	m	struct:__anon1	file:
+lock	ram_block.c	/^    spinlock_t lock;$/;"	m	struct:rb_device	file:
+obj-m	Makefile	/^    obj-m := dor.o$/;"	m
+part_type	partition.c	/^    unsigned char part_type;$/;"	m	struct:__anon1	file:
+ramdevice_cleanup	ram_device.c	/^void ramdevice_cleanup(void)$/;"	f
+ramdevice_init	ram_device.c	/^int ramdevice_init(void)$/;"	f
+ramdevice_read	ram_device.c	/^void ramdevice_read(sector_t sector_off, u8 *buffer, unsigned int sectors)$/;"	f
+ramdevice_write	ram_device.c	/^void ramdevice_write(sector_t sector_off, u8 *buffer, unsigned int sectors)$/;"	f
+rb_cleanup	ram_block.c	/^module_exit(rb_cleanup);$/;"	v
+rb_cleanup	ram_block.c	/^static void __exit rb_cleanup(void)$/;"	f	file:
+rb_close	ram_block.c	/^static int rb_close(struct gendisk *disk, fmode_t mode)$/;"	f	file:
+rb_dev	ram_block.c	/^} rb_dev;$/;"	v	typeref:struct:rb_device	file:
+rb_device	ram_block.c	/^static struct rb_device$/;"	s	file:
+rb_disk	ram_block.c	/^    struct gendisk *rb_disk;$/;"	m	struct:rb_device	typeref:struct:rb_device::gendisk	file:
+rb_fops	ram_block.c	/^static struct block_device_operations rb_fops =$/;"	v	typeref:struct:block_device_operations	file:
+rb_init	ram_block.c	/^module_init(rb_init);$/;"	v
+rb_init	ram_block.c	/^static int __init rb_init(void)$/;"	f	file:
+rb_major	ram_block.c	/^MODULE_ALIAS_BLOCKDEV_MAJOR(rb_major);$/;"	v
+rb_major	ram_block.c	/^static u_int rb_major = 0;$/;"	v	file:
+rb_open	ram_block.c	/^static int rb_open(struct block_device *bdev, fmode_t mode)$/;"	f	file:
+rb_queue	ram_block.c	/^    struct request_queue *rb_queue;$/;"	m	struct:rb_device	typeref:struct:rb_device::request_queue	file:
+rb_request	ram_block.c	/^static void rb_request(struct request_queue *q)$/;"	f	file:
+rb_transfer	ram_block.c	/^static int rb_transfer(struct request *req)$/;"	f	file:
+sec_in_part	partition.c	/^    unsigned int sec_in_part;$/;"	m	struct:__anon1	file:
+size	ram_block.c	/^    unsigned int size;$/;"	m	struct:rb_device	file:
+start_cyl	partition.c	/^    unsigned char start_cyl;$/;"	m	struct:__anon1	file:
+start_cyl_hi	partition.c	/^    unsigned char start_cyl_hi:2;$/;"	m	struct:__anon1	file:
+start_head	partition.c	/^    unsigned char start_head;$/;"	m	struct:__anon1	file:
+start_sec	partition.c	/^    unsigned char start_sec:6;$/;"	m	struct:__anon1	file:

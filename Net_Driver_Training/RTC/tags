@@ -1,0 +1,35 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADDRREG	cdev.c	18;"	d	file:
+DATREG	cdev.c	19;"	d	file:
+FIRST_MINOR	cdev.c	14;"	d	file:
+MINOR_CNT	cdev.c	15;"	d	file:
+MyData	cdevtest.c	/^    }MyData;$/;"	v	typeref:struct:_MyData
+MyDataPtr	cdev.c	/^    } *MyDataPtr;$/;"	v	typeref:struct:_MyData
+MyInt	cdev.c	/^    long MyInt;$/;"	m	struct:_MyData	file:
+MyInt	cdevtest.c	/^    long MyInt;$/;"	m	struct:_MyData	file:
+MyString	cdev.c	/^    char MyString[16];$/;"	m	struct:_MyData	file:
+MyString	cdevtest.c	/^    char MyString[16];$/;"	m	struct:_MyData	file:
+_MyData	cdev.c	/^struct _MyData {$/;"	s	file:
+_MyData	cdevtest.c	/^struct _MyData {$/;"	s	file:
+device	cdevtest.c	/^char device[] = {"\/dev\/mydevice"};$/;"	v
+devno	cdev.c	/^static dev_t devno;$/;"	v	file:
+kbuf	cdev.c	/^char kbuf[64];$/;"	v
+main	cdevtest.c	/^main()$/;"	f
+my_cdev	cdev.c	/^struct cdev my_cdev;$/;"	v	typeref:struct:cdev
+my_cleanup	cdev.c	/^module_exit(my_cleanup);$/;"	v
+my_cleanup	cdev.c	/^void my_cleanup(void)$/;"	f
+my_close	cdev.c	/^static int my_close(struct inode *inode, struct file *filp)$/;"	f	file:
+my_control	cdev.c	/^static long my_control(struct file *filp, unsigned int command, unsigned long argument)$/;"	f	file:
+my_fops	cdev.c	/^struct file_operations my_fops = {$/;"	v	typeref:struct:file_operations
+my_init	cdev.c	/^int my_init(void)$/;"	f
+my_init	cdev.c	/^module_init(my_init);$/;"	v
+my_open	cdev.c	/^static int my_open(struct inode *inode, struct file *filp)$/;"	f	file:
+my_read	cdev.c	/^ssize_t my_read(struct file *filp, char *buf, size_t count, loff_t *offset)$/;"	f
+my_write	cdev.c	/^ssize_t my_write(struct file *filp, const char *buf, size_t count, loff_t *offset)$/;"	f
+rbuf	cdevtest.c	/^char rbuf[32];$/;"	v
+wbuf	cdevtest.c	/^char wbuf[]={"ABCDEFGHIJKLMNOP"};$/;"	v

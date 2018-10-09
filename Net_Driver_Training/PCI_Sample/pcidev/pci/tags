@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DEVICE_ID	hppm.c	12;"	d	file:
+DEVICE_ID	pcires.c	13;"	d	file:
+DRV_NAME	hppm.c	90;"	d	file:
+IOBase	hppm.c	/^unsigned long IOBase, IOBaseEnd;$/;"	v
+IOBase	pcires.c	/^unsigned long IOBase, IOBaseEnd;$/;"	v
+IOBaseEnd	hppm.c	/^unsigned long IOBase, IOBaseEnd;$/;"	v
+IOBaseEnd	pcires.c	/^unsigned long IOBase, IOBaseEnd;$/;"	v
+KERNEL_BUILD	Makefile	/^KERNEL_BUILD := \/lib\/modules\/`uname -r`\/build$/;"	m
+VENDOR_ID	hppm.c	11;"	d	file:
+VENDOR_ID	pcires.c	12;"	d	file:
+get_card_details	hppm.c	/^int get_card_details(struct pci_dev *pdev)$/;"	f
+get_card_details	pcires.c	/^int get_card_details(void)$/;"	f
+get_mac_details	hppm.c	/^void get_mac_details ( unsigned int mem_map_base )$/;"	f
+get_mac_details	pcires.c	/^void get_mac_details ( unsigned int mem_map_base )$/;"	f
+hppm_driver	hppm.c	/^struct pci_driver hppm_driver = {$/;"	v	typeref:struct:pci_driver
+hppm_exit	hppm.c	/^module_exit(hppm_exit);$/;"	v
+hppm_exit	hppm.c	/^void hppm_exit(void)$/;"	f
+hppm_init	hppm.c	/^int hppm_init(void)$/;"	f
+hppm_init	hppm.c	/^module_init(hppm_init);$/;"	v
+nic_exit	pcires.c	/^module_exit(nic_exit);$/;"	v
+nic_exit	pcires.c	/^void nic_exit(void)$/;"	f
+nic_init	pcires.c	/^int nic_init(void)$/;"	f
+nic_init	pcires.c	/^module_init(nic_init);$/;"	v
+obj-m	Makefile	/^obj-m := pcires.o$/;"	m
+rtl8139_exit	hppm.c	/^void rtl8139_exit(struct pci_dev *pdev)$/;"	f
+rtl8139_init	hppm.c	/^int rtl8139_init(struct pci_dev *pdev, const struct pci_device_id *ent)$/;"	f
+rtl8139_pci_tbl	hppm.c	/^static struct pci_device_id rtl8139_pci_tbl[] = {$/;"	v	typeref:struct:pci_device_id	file:
+ulMemoryBase	hppm.c	/^unsigned long ulMemoryBase, ulMemoryBaseEnd;$/;"	v
+ulMemoryBase	pcires.c	/^unsigned long ulMemoryBase, ulMemoryBaseEnd;$/;"	v
+ulMemoryBaseEnd	hppm.c	/^unsigned long ulMemoryBase, ulMemoryBaseEnd;$/;"	v
+ulMemoryBaseEnd	pcires.c	/^unsigned long ulMemoryBase, ulMemoryBaseEnd;$/;"	v
+ulResFlags	hppm.c	/^unsigned long ulResFlags;$/;"	v
+ulResFlags	pcires.c	/^unsigned long ulResFlags;$/;"	v

@@ -1,0 +1,94 @@
+
+#include <linux/sched.h>
+#include <linux/module.h>
+#include <linux/binfmts.h>
+#include <linux/module.h>
+#include <linux/string.h>
+#include <linux/stat.h>
+#include <linux/binfmts.h>
+#include <linux/init.h>
+#include <linux/file.h>
+#include <linux/err.h>
+#include <linux/fs.h>
+
+
+/*
+ * the viewer can be modified at load time
+ */
+static char *viewer = "/bin/cat";
+/*
+ * this is the base name, calculated at first invocation
+ */
+static char *viewer_name;
+
+static inline int do_load_bloom_binary(struct linux_binprm *bprm)
+{
+	const char *i_arg, *i_name;
+	char *cp;
+	struct file *file;
+	char interp[BINPRM_BUF_SIZE];
+	int retval;
+
+	if ((bprm->buf[0] != 0xff) || (bprm->buf[1] != 0xd8))
+		return -ENOEXEC;
+
+	allow_write_access(bprm->file);
+	fput(bprm->file);
+	bprm->file = NULL;
+
+	/*
+	 * OK, we've parsed out the interpreter name and
+	 * (optional) argument.
+	 * Splice in (1) the interpreter's name for argv[0]
+	 *           (2) (optional) argument to interpreter
+	 *           (3) filename of shell script (replace argv[0])
+	 *
+	 * This is done in reverse order, because of how the
+	 * user environment and arguments are stored.
+	 */
+	retval = remove_arg_zero(bprm);
+	if (retval)
+		return retval;
+	retval = copy_strings_kernel(1, &viewer, bprm);
+	if (retval < 0) return retval;
+	bprm->argc++;
+	if (i_arg) {
+		retval = copy_strings_kernel(1, &bprm->buf, bprm);
+		if (retval < 0) return retval;
+		bprm->argc++;
+	}
+	retval = copy_strings_kernel(1, &viewer, bprm);
+	if (retval) return retval;
+	bprm->argc++;
+	retval = bprm_change_interp(interp, bprm);
+	if (retval < 0)
+		return retval;
+
+	/*
+	 * OK, now restart the process with the interpreter's dentry.
+	 */
+	file = open_exec(interp);
+	if (IS_ERR(file))
+		return PTR_ERR(file);
+
+	bprm->file = file;
+	retval = prepare_binprm(bprm);
+	if (retval < 0)
+		return retval;
+	return search_binary_handler(bprm);
+
+}
+
+struct linux_binfmt bloom_format = {
+	.module         = THIS_MODULE,
+	.load_binary    =do_load_bloom_binary ,
+
+};
+
+int init_module (void) {
+	register_binfmt(&bloom_format);
+}
+
+void cleanup_module(void) {
+	unregister_binfmt(&bloom_format);
+}
