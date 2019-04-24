@@ -1,17 +1,18 @@
 #include <stdio.h>
 
-int main (int argc, char *argv[], char *envp[])
+int main (int argc, char *argv[])
 {
-//	__environ;
-	#if 0
-	asm("mov $0x66, %rdi\n\t"
-    "call putchar\n\t");
-	int a,b ;
-	printf ("%d",a++-++b);
-	return 0;
-	#endif
-	printf ("%u\n", sizeof argv[1]);
-//	typedef unsigned int @ufile_ptr;
+	char buf[100];
+	memset(buf, 0, sizeof buf);
+	puts("enter number");
+	fgets(buf,sizeof(buf),stdin);
+	int base = _val("enter base");
+	if (base > 36) {
+		printf("Invalid base %d\n", base);
+		exit(1);
+	}
 
+	
+	return 0;
 }
 

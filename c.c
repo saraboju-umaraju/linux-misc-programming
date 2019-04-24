@@ -1,47 +1,41 @@
+/****************** CLIENT CODE ****************/
+
 #include <stdio.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string.h>
 
-struct stack_frame {
-		struct stack_frame* next;
-		void* ret;
-};
-void dump(void *fp, int num)
-{
-	int i=0;
-	for(;i<num; i++)
-		printf ("%02x ", ((char*)fp)[i]&0xff);
-}
-int get_call_stack() {
-		/* x86/gcc-specific: this tells gcc that the fp
-		   variable should be an alias to the %ebp register
-		   which keeps the frame pointer */
-		register struct stack_frame* fp asm("ebp");
-		dump(fp,200);
-		/* the rest just walks through the linked list */
-		struct stack_frame* frame = fp;
-		int i = 0;
-		while(frame) {
+int main(){
+  int clientSocket;
+  char buffer[1024];
+  struct sockaddr_in serverAddr;
+  socklen_t addr_size;
 
-				printf("%x\n",frame->ret);
-	#if 0
-				if(i < max_size) {
-						retaddrs[i++] = frame->ret;
-				}
-#endif
-				frame = frame->next;
-		}
-		return i;
-}
-int one ()
-{
-	two();
-}
-int two()
-{
-	get_call_stack();
-}
-int main (int argc, char *argv[])
-{
-		one();
-		return 0;
-}
+  /*---- Create the socket. The three arguments are: ----*/
+  /* 1) Internet domain 2) Stream socket 3) Default protocol (TCP in this case) */
+  clientSocket = socket(PF_INET, SOCK_STREAM, 0);
+  
+  /*---- Configure settings of the server address struct ----*/
+  /* Address family = Internet */
+  serverAddr.sin_family = AF_INET;
+  /* Set port number, using htons function to use proper byte order */
+  serverAddr.sin_port = htons(7891);
+  /* Set IP address to localhost */
+  serverAddr.sin_addr.s_addr = inet_addr("192.168.2.154");
+  /* Set all bits of the padding field to 0 */
+  memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);  
 
+  /*---- Connect the socket to the server using the address struct ----*/
+  addr_size = sizeof serverAddr;
+  connect(clientSocket, (struct sockaddr *) &serverAddr, addr_size);
+  perror("");
+
+  /*---- Read the message from the server into the buffer ----*/
+  while(1)
+  recv(clientSocket, buffer, 10, 0);
+
+  /*---- Print the received message ----*/
+//  printf("Data received: %s",buffer);   
+
+  return 0;
+}

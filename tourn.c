@@ -18,7 +18,6 @@ int main (int argc, char *argv[])
 	for (l = MAX ;l<=(2*MAX)-1 ; l++)	
 		ptr[l] = l+99; 
 	
-
 	for(l =(2*MAX)-1, k=MAX-1; l >= 0; l-=2,k--){
 		ptr[k] = bigger(ptr[l], ptr[l-1]);
 	}	

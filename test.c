@@ -1,14 +1,10 @@
-#include <stdio.h>
-#define ath_be_msb(_val, _i) (((_val) & (1 << (7 - _i))) >> (7 - _i))
+#include <stdio.h>                  
 
-#define ath_spi_bit_banger(_byte)   do {                \
+void sayHello (char *tag) {         
+    printf("%s: Hello!\n", tag);    
+}                                   
 
-int
-main(int argc, char *argv[])
-{
-    int i;
-    for (i = 0; i < 8; i++) {
-        printf("%x\n", ath_be_msb(0x0a, i));
-    }
-    return 0;
-}
+int main (int argc, char *argv[]) { 
+    sayHello(argv[0]);              
+    return 0;                       
+}  

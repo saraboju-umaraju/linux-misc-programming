@@ -172,7 +172,7 @@ void print_legacy_mbr(int fd) {
     for (; i < 4; i++) {
         p = &mbr.partition_record[i];
         if (!memcmp(p, &empty, sizeof(mbr_part_entry))) continue;
-        printf("status=%hhu\tstart_head=%hhu\tstart_sector=%hu\tpart_type=0x%hhx\t"
+        printf("### status=%hhu\tstart_head=%hhu\tstart_sector=%hu\tpart_type=0x%hhx\t"
                 "end_head=%hhu\tend_sector=%hu\tfirst_abs_sector=%u\tsector_count=%u\n",
                 p->status, p->start_head, p->start_sector, p->part_type,
                 p->end_head, p->end_sector, p->first_abs_sector,

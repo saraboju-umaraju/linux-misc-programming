@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	long *ptr = malloc(10*sizeof(long));
+	long *ptr = malloc(10*sizeof(void*));
 	int l=0;
 	for(;l<10;l++)
 		ptr[l] = l;

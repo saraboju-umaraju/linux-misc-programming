@@ -118,9 +118,9 @@ int main (void)
 	
 	add_edge(list,5,6); 
 
-	display(list);
+//	display(list);
 	
-//	print_edges(list, 0);
+	//print_edges(list, 0);
 
 	dfs(list);
 }

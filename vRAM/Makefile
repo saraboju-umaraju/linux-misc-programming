@@ -1,6 +1,6 @@
 obj-m := vram.o
 
 modules:
-	make -C /usr/src/linux-4.13.2 M=`pwd` $@
+	make -C /usr/src/linux-GIT M=`pwd` $@
 clean:
 	make -C /usr/src/linux-4.13.2 M=`pwd` $@

@@ -1,5 +1,9 @@
-obj-m:= sub.o
-tar:
-	make -C /lib/modules/`uname -r`/build/ M=`pwd` modules
+CC = gcc
+CFLAGS = -Wall -ggdb
 
+hash: name_hash.o _val.o
+	$(CC) -o $@ $^
+
+clean:
+	$(RM) name_hash.o _val.o hash
 
