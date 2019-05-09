@@ -8,12 +8,10 @@
 char *rev_str(char *str)
 {
 	int len = strlen(str);
-	int len1 = len;
 	int index = 0;	
 	while( index < (len1/2) ) {
-		swap_char(str, index, len-1);	
+		swap_char(str, index, len-index-1);	
 		index++;
-		len--;
 	}
 	return str;
 }
@@ -70,7 +68,7 @@ int main (int argc, char *argv[])
 {
 	int num = 1234 ;
 
-	char uma[] = "saraboju umaraju" ;
+	char uma[] = "umaraj" ;
 
 	printf ("%d\n", rev_num(num));
 	
